@@ -53,8 +53,7 @@
 <body>
     <div class="container">
         <h1>"Legends Say the Treasure Awaits—If Ye Can Decode It!"</h1>
-        <p>"Legends Say the Treasure Awaits—If Ye Can Decode It!" 
-            Decode the following message to find the hidden flag location:</p>
+        <p>Decode the following message to find the hidden flag location:</p>
         <h2 id="encoded-message"></h2>
         <button onclick="showHint()">Hint</button>
         <p id="hint"></p>
