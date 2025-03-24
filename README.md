@@ -16,7 +16,7 @@
             padding: 20px;
         }
         .container {
-            max-width: 600px;
+            max-width: 601px;
             margin: auto;
             background: rgba(0, 0, 0, 0.7);
             padding: 20px;
