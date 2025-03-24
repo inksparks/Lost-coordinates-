@@ -1,5 +1,5 @@
 
-    color: white;
+
 
 <html lang="en">
 <head>
