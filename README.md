@@ -17,6 +17,10 @@
             color: white;
             padding: 20px;
         }
+        h1 {
+            color: white;
+        }
+
         .container {
             max-width: 601px;
             margin: auto;
