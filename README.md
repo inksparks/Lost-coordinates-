@@ -1,6 +1,5 @@
-#lost-coordinates {
+
     color: white;
-}
 
 <html lang="en">
 <head>
@@ -16,9 +15,6 @@
             background-size: cover;
             color: white;
             padding: 20px;
-        }
-        h1 {
-            color: white;
         }
 
         .container {
