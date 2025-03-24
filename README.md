@@ -21,6 +21,7 @@
             background: rgba(0, 0, 0, 0.7);
             padding: 20px;
             border-radius: 10px;
+            color: white;
         }
         .game-container {
             margin-top: 50px;
