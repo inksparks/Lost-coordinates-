@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost Coordinates Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url('event.png.webp') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .game-container {
+            margin-top: 50px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lost Coordinates Game</h1>
+        <p>Decode the following message to find the hidden flag location:</p>
+        <h2 id="encoded-message"></h2>
+        <button onclick="showHint()">Hint</button>
+        <p id="hint"></p>
+        <div class="game-container">
+            <input type="text" id="user-input" placeholder="Enter decoded message">
+            <button onclick="checkAnswer()">Submit</button>
+            <p id="result"></p>
+        </div>
+    </div>
+    
+    <script>
+        function rot13(str) {
+            return str.replace(/[a-zA-Z]/g, function(c) {
+                return String.fromCharCode(
+                    c.charCodeAt(0) + (c.toLowerCase() < 'n' ? 13 : -13)
+                );
+            });
+        }
+
+        const flagLocation = "FLAG{island_cave}";
+        const encodedMessage = btoa(rot13(flagLocation)); // Encoding with ROT13 before Base64
+        document.getElementById("encoded-message").innerText = encodedMessage;
+        
+        let attempts = 0;
+        function checkAnswer() {
+            let userAnswer = document.getElementById("user-input").value.trim();
+            if (userAnswer === flagLocation) {
+                document.getElementById("result").innerText = "Congratulations! You found the lost coordinates! 🎉";
+                document.getElementById("result").style.color = "#4CAF50";
+            } else {
+                attempts++;
+                document.getElementById("result").innerText = "Incorrect! Keep decoding...";
+                document.getElementById("result").style.color = "#FF5733";
+                if (attempts >= 3) {
+                    document.getElementById("hint").innerText = "Hint: Think of a classic cipher before Base64.";
+                }
+            }
+        }
+
+        function showHint() {
+            document.getElementById("hint").innerText = "Try decoding it twice!";
+        }
+    </script>
+</body>
+</html>
