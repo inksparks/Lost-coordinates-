@@ -1,4 +1,6 @@
-
+#lost-coordinates {
+    color: white;
+}
 
 <html lang="en">
 <head>
