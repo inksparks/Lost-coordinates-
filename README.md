@@ -18,7 +18,7 @@
         }
 
         .container {
-            max-width: 601px;
+            max-width: 600px;
             margin: auto;
             background: rgba(0, 0, 0, 0.7);
             padding: 20px;
